@@ -1,0 +1,23 @@
+sources: # Commence la définition d'une ou plusieurs sources
+  - name: raw # Nouveau nom du dataset
+    schema: gz_raw_data # Nom actuel du dataset
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: sales of Greenweez / we have one row per productid found in each orders_id
+        columns:
+          - name: date_date
+            description: date
+          - name: orders_id
+            description: od
+      - name: product
+        identifier: raw_gz_product
+        description: products of Greenweez
+        columns:
+          - name: products_id
+            tests:
+              - unique
+              - not_null
+      - name: ship
+        identifier: raw_gz_ship
+        description: ship of Greenweez

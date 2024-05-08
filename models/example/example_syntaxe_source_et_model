@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: my_first_model
+    description: "A description of my_first_model."
+    columns:
+      - name: column_1
+        description: "A description of column_1."
+        tests:
+          - not_null
+          - unique
+      - name: column_2
+        description: "A description of column_2."
+        tests:
+          - accepted_values:
+              values: ['value_1', 'value_2', 'value_3']
+
+sources:
+  - name: my_source
+    description: "A description of my_source."
+    tables:
+      - name: my_table
+        description: "A description of my_table."
+        columns:
+          - name: column_1
+            description: "A description of column_1."
+            tests:
+              - not_null
